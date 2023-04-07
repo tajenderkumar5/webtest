@@ -1,0 +1,42 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static  'css/styles.css' %}">
+</head>
+<body>
+    <div class="signupFrm">
+        <form method="post" class="form">
+            <h1 class="title">Sign up</h1>
+            {% csrf_token %}
+           
+            <div class="inputContainer">
+                <label for="id_username" class="label" class="label">Username:</label>
+                <input type="text" name="username" maxlength="150" autocapitalize="none" class="input" autocomplete="username" autofocus="" required="" id="id_username">
+            </div>
+            <div class="inputContainer">
+                <label for="id_email" class="label">email:</label>
+                <input type="email" name="email" required="" id="id_email" class="input">
+            </div>
+            <div class="inputContainer">
+                <label for="id_password1" class="label">Password:</label>
+                <input type="password" name="password1" autocomplete="new-password" required="" class="input" id="id_password1">
+            </div>
+
+            <div class="inputContainer">
+                <label for="id_password2" class="label">Password confirmation:</label>
+                <input type="password" name="password2" autocomplete="new-password" required=""  class="input" id="id_password2">    
+            </div>
+            <button type="submit"  class="submitBtn">Sign Up</button>
+            <div class="inputContainer">
+                <p class="text-center">Already have an account? <a href="/login">login here</a>.</p>
+
+            </div>
+        </form>        
+    </div>  
+</body>
+</html> 
